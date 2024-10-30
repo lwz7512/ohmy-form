@@ -1,23 +1,22 @@
-import FormRender from "form-render";
-import defaultSchema from "./schema2.json";
-// 自定义组件
-import CyberTreeSelect from "../../../components/CyberTreeSelect";
-import CyberFileUpload from "../../../components/CyberFileUpload";
+import React from 'react';
+import FormRender, { useForm } from "form-render";
+import defaultSchema from './schema.json';
+import CyberTreeSelect from '../../../components/CyberTreeSelect';
+import CyberFileUpload from '../../../components/CyberFileUpload';
 
-const Demo = () => {
-  // 使用 FormRender 组件时传入 widgets
+export const Demo = () => {
+  const form = useForm(); // 确保 useForm 被正确调用
   const widgets = {
-    CyberTreeSelect, // 这样传递自定义组件
+    CyberTreeSelect, // 确保组件被正确引用
     CyberFileUpload,
   };
 
   return (
     <FormRender
+      form={form} // 确保将 form 实例传递给 FormRender
       schema={defaultSchema}
       widgets={widgets}
       // 其他 props...
     />
   );
 };
-
-export default Demo;

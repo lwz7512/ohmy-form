@@ -1,6 +1,7 @@
+
 {
   "type": "object",
-  "column": 1,
+  "column": 3,
   "labelWidth": 120,
   "displayType": "row",
   "properties": {
@@ -28,11 +29,6 @@
           "value": "0-1"
         }
       ]
-    },
-    "attechment": {
-      "title": "附件",
-      "type": "string",
-      "widget": "CyberFileUpload"
     }
   }
 }

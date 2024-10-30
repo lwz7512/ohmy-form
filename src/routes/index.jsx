@@ -22,6 +22,8 @@ import {
   Demo7,
   Demo8,
   Demo9,
+  Demo10,
+  Demo11,
 } from '@/pages';
 
 
@@ -157,6 +159,14 @@ const router = createBrowserRouter([
       {
         path: 'demo9',
         element: <Demo9 />,
+      },
+      {
+        path: 'demo10',
+        element: <Demo10 />,
+      },
+      {
+        path: 'demo11',
+        element: <Demo11 />,
       },
       // {
       //   path: 'learning',

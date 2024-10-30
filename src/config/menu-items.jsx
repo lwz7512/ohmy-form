@@ -102,7 +102,7 @@ export const items = [
       'demo10',
     ),
     getItem(
-      <Link to={DEMO_PATHS.demo11}>Demo 11:</Link>,
+      <Link to={DEMO_PATHS.demo11}>自定义校验:</Link>,
       'demo11',
     ),
     getItem(
