@@ -13,6 +13,11 @@ import {
   SignInPage,
   SignUpPage,
   DefaultDashboardPage,
+  Demo1,
+  Demo2,
+  Demo3,
+  Demo4,
+  Demo5,
 } from '@/pages';
 
 
@@ -104,7 +109,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/dashboards',
+    path: '/demos',
     element: <PageWrapper children={<DashboardLayout />} />,
     errorElement: <ErrorPage />,
     children: [
@@ -113,26 +118,26 @@ const router = createBrowserRouter([
         path: 'default',
         element: <DefaultDashboardPage />,
       },
-      // {
-      //   path: 'projects',
-      //   element: <ProjectsDashboardPage />,
-      // },
-      // {
-      //   path: 'ecommerce',
-      //   element: <EcommerceDashboardPage />,
-      // },
-      // {
-      //   path: 'marketing',
-      //   element: <MarketingDashboardPage />,
-      // },
-      // {
-      //   path: 'social',
-      //   element: <SocialDashboardPage />,
-      // },
-      // {
-      //   path: 'bidding',
-      //   element: <BiddingDashboardPage />,
-      // },
+      {
+        path: 'demo1',
+        element: <Demo1 />,
+      },
+      {
+        path: 'demo2',
+        element: <Demo2 />,
+      },
+      {
+        path: 'demo3',
+        element: <Demo3 />,
+      },
+      {
+        path: 'demo4',
+        element: <Demo4 />,
+      },
+      {
+        path: 'demo5',
+        element: <Demo5 />,
+      },
       // {
       //   path: 'learning',
       //   element: <LearningDashboardPage />,

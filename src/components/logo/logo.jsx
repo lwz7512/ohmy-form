@@ -46,7 +46,7 @@ export const Logo = ({
             borderRadius,
           }}
         >
-          Antd Admin
+          Oh my Forms
         </Typography.Title>
       </Flex>
     </Link>

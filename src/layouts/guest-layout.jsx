@@ -26,7 +26,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Logo, NProgress } from '@/components';
 import {
-  PATH_AUTH,
+  DEMO_PATHS,
   PATH_DASHBOARD,
   PATH_DOCS,
   PATH_GITHUB,
@@ -90,30 +90,30 @@ export const GuestLayout = () => {
             zIndex: 1,
           }}
         >
-          <Logo color="blue" asLink href={PATH_LANDING.root} />
+          <Logo color="white" asLink href={PATH_LANDING.root} />
           {!isMobile ? (
             <>
               <Flex gap="small">
-                <Link to={PATH_DOCS.productRoadmap} target="_blank">
-                  <Button icon={<ProductOutlined />} type="link">
-                    Product Roadmap
+                <Link to={PATH_LANDING.root} >
+                  <Button icon={<ProductOutlined />} type="link" color="default" variant="solid">
+                    Product Preview
                   </Button>
                 </Link>
-                <Link to={PATH_DOCS.components} target="_blank">
-                  <Button icon={<AppstoreAddOutlined />} type="link">
-                    Components
+                <Link to={DEMO_PATHS.default} >
+                  <Button icon={<AppstoreAddOutlined />} type="link" color="default" variant="solid" >
+                    Demos
                   </Button>
                 </Link>
-                <Link to={PATH_GITHUB.repo} target="_blank">
+                {/* <Link to={PATH_GITHUB.repo} target="_blank">
                   <Button icon={<GithubOutlined />} type="link">
                     Give us a star
                   </Button>
-                </Link>
-                <Link to={PATH_AUTH.signin}>
+                </Link> */}
+                {/* <Link to={PATH_AUTH.signin}>
                   <Button icon={<LoginOutlined />} type="primary">
                     Live Preview
                   </Button>
-                </Link>
+                </Link> */}
               </Flex>
             </>
           ) : (

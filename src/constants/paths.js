@@ -24,6 +24,22 @@ const ROOTS_CALENDAR = '/calendar';
 const ROOTS_ERRORS = '/errors';
 const ROOTS_ABOUT = '/about';
 
+export const DEMO_PATHS = {
+  default: '/demos/default',
+  demo1: '/demos/demo1',
+  demo2: '/demos/demo2',
+  demo3: '/demos/demo3',
+  demo4: '/demos/demo4',
+  demo5: '/demos/demo5',
+  demo6: '/demos/demo6',
+  demo7: '/demos/demo7',
+  demo8: '/demos/demo8',
+  demo9: '/demos/demo9',
+  demo10: '/demos/demo10',
+  demo11: '/demos/demo11',
+  demo12: '/demos/demo12',
+};
+
 export const PATH_ERROR = {
   root: ROOTS_ERRORS,
   error400: path(ROOTS_ERRORS, '/400'),
