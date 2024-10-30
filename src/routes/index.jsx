@@ -18,6 +18,10 @@ import {
   Demo3,
   Demo4,
   Demo5,
+  Demo6,
+  Demo7,
+  Demo8,
+  Demo9,
 } from '@/pages';
 
 
@@ -137,6 +141,22 @@ const router = createBrowserRouter([
       {
         path: 'demo5',
         element: <Demo5 />,
+      },
+      {
+        path: 'demo6',
+        element: <Demo6 />,
+      },
+      {
+        path: 'demo7',
+        element: <Demo7 />,
+      },
+      {
+        path: 'demo8',
+        element: <Demo8 />,
+      },
+      {
+        path: 'demo9',
+        element: <Demo9 />,
       },
       // {
       //   path: 'learning',

@@ -8,3 +8,8 @@ export { Demo as Demo2 } from './demos/demo2';
 export { Demo as Demo3 } from './demos/demo3';
 export { Demo as Demo4 } from './demos/demo4';
 export { Demo as Demo5 } from './demos/demo5';
+export { Demo as Demo6 } from './demos/demo6';
+export { Demo as Demo7 } from './demos/demo7';
+export { Demo as Demo8 } from './demos/demo8';
+export { Demo as Demo9 } from './demos/demo9';
+// export { Demo as Demo10 } from './demos/demo10';

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FormRender, { useForm } from 'form-render';
 import defalutSchema from './schema.json';
 
-const Demo = () => {
+export const Demo = () => {
   const form = useForm();
   const [schema, setSchema] = useState(defalutSchema);
   const [data, setData] = useState({ /* 初始 data */ });
@@ -22,7 +22,7 @@ const Demo = () => {
         `
           return {
             number_a: (val) => {
-              const { number_b } = form.getValues(['number_b']);
+              const { number_b } = form.getValues('number_b');
               form.setValueByPath('number_sum', val + (number_b || 0));
             },
           };
@@ -30,7 +30,7 @@ const Demo = () => {
         `
           return {
             number_b: (val) => {
-              const { number_a } = form.getValues(['number_a']);
+              const { number_a } = form.getValues('number_a');
               form.setValueByPath('number_sum', val + (number_a || 0));
             },
           };
@@ -78,5 +78,3 @@ const Demo = () => {
     />
   );
 };
-
-export default Demo;

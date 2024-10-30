@@ -10,7 +10,7 @@ import {
   updateSchemaEnums,
 } from "./schemaUtils";
 
-const Demo = () => {
+export const Demo = () => {
   const form = useForm();
   const [schema, setSchema] = useState(defaultSchema);
   const [data, setData] = useState({
@@ -77,5 +77,3 @@ const Demo = () => {
     </Card>
   );
 };
-
-export default Demo;

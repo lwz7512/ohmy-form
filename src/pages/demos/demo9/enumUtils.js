@@ -33,7 +33,7 @@ export const getEnumFromDataview = (form, dataview, dependencies) => {
 
     const result = {};
     dependencies.forEach((dep) => {
-      const value = form.getValues([dep]);
+      const value = form.getValues(dep);
       const key = value[dep];
       if (enumMapping[key]) {
         result.enum = enumMapping[key].map((item) => item.value);
@@ -92,7 +92,7 @@ export const getEnumFromDataview = (form, dataview, dependencies) => {
 
     const result = {};
     dependencies.forEach((dep) => {
-      const value = form.getValues([dep]);
+      const value = form.getValues(dep);
       const key = value[dep];
       if (enumMapping[key]) {
         result.enum = enumMapping[key].map((item) => item.value);

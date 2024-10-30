@@ -2,7 +2,7 @@ export const codeFromDB = [
   `
     return {
       number_a: (val) => {
-        const { number_b } = form.getValues(['number_b']);
+        const { number_b } = form.getValues('number_b');
         form.setValueByPath('number_sum', val + (number_b || 0));
       },
     };
@@ -10,7 +10,7 @@ export const codeFromDB = [
   `
     return {
       number_b: (val) => {
-        const { number_a } = form.getValues(['number_a']);
+        const { number_a } = form.getValues('number_a');
         form.setValueByPath('number_sum', val + (number_a || 0));
       },
     };
@@ -18,7 +18,8 @@ export const codeFromDB = [
   `
     return {
       date_begin: (val) => {
-        const { date_end } = form.getValues(['date_end']);
+        const { date_end } = form.getValues('date_end');
+        console.log(val, date_end);
         if (val && date_end) {
           // 将字符串转换为Date对象
           const date1 = new Date(val);
@@ -34,10 +35,11 @@ export const codeFromDB = [
             }];
             form.setErrorFields(errors);
           } else if (date1.getTime() > date2.getTime()) {
-            const errors = {
+            console.log("开始日期必须小于结束日期");
+            const errors = [{
               name: "date_begin",
-              error: "开始日期必须小于结束日期",
-            };
+              error: ["开始日期必须小于结束日期"],
+            }];
             form.setErrorFields(errors);
           } else {
             const errors = [{
@@ -56,7 +58,8 @@ export const codeFromDB = [
   `
     return {
       date_end: (val) => {
-        const { date_begin } = form.getValues(['date_begin']);
+        const { date_begin } = form.getValues('date_begin');
+        console.log(date_begin, val);
         if (val && date_begin) {
           // 将字符串转换为Date对象
           const date1 = new Date(date_begin);
@@ -72,10 +75,11 @@ export const codeFromDB = [
             }];
             form.setErrorFields(errors);
           } else if (date1.getTime() > date2.getTime()) {
-            const errors = {
+            console.log("结束日期必须大于开始日期");
+            const errors = [{
               name: "date_end",
-              error: "结束日期必须大于开始日期",
-            };
+              error: ["结束日期必须大于开始日期"],
+            }];
             form.setErrorFields(errors);
           } else {
             const errors = [{

@@ -2,7 +2,7 @@ import FormRender, { useForm } from "form-render";
 import { useEffect, useState } from "react";
 import defaultSchema from "./schema.json";
 
-const Demo = () => {
+export const Demo = () => {
   const form = useForm();
   const [schema, setSchema] = useState(defaultSchema);
   const [data, setData] = useState({
@@ -55,5 +55,3 @@ const Demo = () => {
     />
   );
 };
-
-export default Demo;
