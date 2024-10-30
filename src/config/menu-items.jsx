@@ -98,7 +98,7 @@ export const items = [
       'demo9',
     ),
     getItem(
-      <Link to={DEMO_PATHS.demo10}>Demo 10:</Link>,
+      <Link to={DEMO_PATHS.demo10}>自定义控件:</Link>,
       'demo10',
     ),
     getItem(
