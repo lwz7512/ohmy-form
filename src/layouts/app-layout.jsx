@@ -136,7 +136,7 @@ export const AppLayout = ({ children }) => {
             top: 0,
             bottom: 0,
             background: 'none',
-            border: 'none',
+            borderRight: '1px solid #CCCCCC',
             transition: 'all .2s',
           }}
         />

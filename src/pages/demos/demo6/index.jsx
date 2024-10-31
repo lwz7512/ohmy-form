@@ -44,12 +44,15 @@ export const Demo = () => {
   }, [form, loaded]);
 
   return (
-    <FormRender
-      form={form}
-      schema={schema}
-      data={data}
-      watch={watch}
-      // 其他 FormRender 配置...
-    />
+    <>
+      <h1>Demo6: watch config with from string</h1>
+      <FormRender
+        form={form}
+        schema={schema}
+        data={data}
+        watch={watch}
+        // 其他 FormRender 配置...
+      />
+    </>
   );
 };

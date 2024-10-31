@@ -12,6 +12,9 @@ import {
   SecurityScanOutlined,
   SnippetsOutlined,
   UserOutlined,
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
 } from '@ant-design/icons';
 
 import {
@@ -54,61 +57,52 @@ const getItem = (
   };
 };
 
+export const mockTreeItems = [
+  {
+    label: 'Default Page',
+    key: '/demos/default',
+    icon: <AppstoreOutlined />,
+  },
+  {
+    label: 'Demos - Group',
+    key: 'demos',
+    icon: <SettingOutlined />,
+    children: [
+      { label: 'Form Sum', key: '/demos/demo1' },
+      { label: 'Form Select Cascade', key: '/demos/demo2' },
+      { label: 'Form Watch', key: '/demos/demo3' },
+      { label: 'Dyna load script', key: '/demos/demo4' },
+      { label: 'Dyna script from DB', key: '/demos/demo5'},
+      { label: 'Demo 06:', key: '/demos/demo6'},
+      { label: 'Demo 07:', key: '/demos/demo7'},
+      { label: 'Demo 08:', key: '/demos/demo8'},
+      { label: 'Demo 09:', key: '/demos/demo9'},
+      { label: '自定义控件:', key: '/demos/demo10'},
+      { label: '自定义校验:', key: '/demos/demo11'},
+      { label: 'Demo 12:', key: '/demos/demo12'},
+    ],
+  },
+];
+
 /**
  * type MenuItem = Required<MenuProps>['items'][number];
  * @type {MenuItem[]}
  */
 export const items = [
   getItem('Demos', 'demos', <PieChartOutlined />, [
-    getItem(<Link to={PATH_DASHBOARD.default}>Default</Link>, 'default', null),
-    getItem(
-      <Link to={DEMO_PATHS.demo1}>Form Sum</Link>,
-      'demo1',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo2}>Form Select Cascade</Link>,
-      'demo2',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo3}>Form Watch</Link>,
-      'demo3',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo4}>Dyna load script</Link>,
-      'demo4',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo5}>Dyna script from DB</Link>,
-      'demo5',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo6}>Demo 06:</Link>,
-      'demo6',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo7}>Demo 07:</Link>,
-      'demo7',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo8}>Demo 08:</Link>,
-      'demo8',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo9}>Demo 09:</Link>,
-      'demo9',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo10}>自定义控件:</Link>,
-      'demo10',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo11}>自定义校验:</Link>,
-      'demo11',
-    ),
-    getItem(
-      <Link to={DEMO_PATHS.demo12}>Demo 12:</Link>,
-      'demo12',
-    ),
+    getItem('Default', 'default', null),
+    getItem('Form Sum', 'demo1'),
+    getItem('Form Select Cascade', 'demo2'),
+    getItem('Form Watch', 'demo3'),
+    getItem('Dyna load script', 'demo4'),
+    getItem('Dyna script from DB', 'demo5'),
+    getItem('Demo 06:', 'demo6'),
+    getItem('Demo 07:', 'demo7'),
+    getItem('Demo 08:', 'demo8'),
+    getItem('Demo 09:', 'demo9'),
+    getItem('自定义控件:', 'demo10'),
+    getItem('自定义校验:', 'demo11'),
+    getItem('Demo 12:', 'demo12'),
   ]),
   getItem(
     <Link to={PATH_ABOUT.root}>About</Link>,
@@ -121,118 +115,4 @@ export const items = [
     <BranchesOutlined />
   ),
 
-  getItem('Pages', 'pages', null, [], 'group'),
-
-  getItem('Corporate', 'corporate', <IdcardOutlined />, [
-    // FIXME: cause error with line: 96
-    // getItem(<Link to={PATH_CORPORATE.about}>About</Link>, 'about', null),
-    getItem(<Link to={PATH_CORPORATE.team}>Team</Link>, 'team', null),
-    getItem(<Link to={PATH_CORPORATE.faqs}>FAQ</Link>, 'faqs', null),
-    getItem(
-      <Link to={PATH_CORPORATE.contact}>Contact us</Link>,
-      'contact us',
-      null
-    ),
-    getItem(<Link to={PATH_CORPORATE.pricing}>Pricing</Link>, 'pricing', null),
-    getItem(<Link to={PATH_CORPORATE.license}>License</Link>, 'license', null),
-  ]),
-
-  getItem('User profile', 'user-profile', <UserOutlined />, [
-    getItem(
-      <Link to={PATH_USER_PROFILE.details}>Details</Link>,
-      'details',
-      null
-    ),
-    getItem(
-      <Link to={PATH_USER_PROFILE.preferences}>Preferences</Link>,
-      'preferences',
-      null
-    ),
-    getItem(
-      <Link to={PATH_USER_PROFILE.personalInformation}>Information</Link>,
-      'personal-information',
-      null
-    ),
-    getItem(
-      <Link to={PATH_USER_PROFILE.security}>Security</Link>,
-      'security',
-      null
-    ),
-    getItem(
-      <Link to={PATH_USER_PROFILE.activity}>Activity</Link>,
-      'activity',
-      null
-    ),
-    getItem(
-      <Link to={PATH_USER_PROFILE.action}>Actions</Link>,
-      'actions',
-      null
-    ),
-    getItem(<Link to={PATH_USER_PROFILE.help}>Help</Link>, 'help', null),
-    getItem(
-      <Link to={PATH_USER_PROFILE.feedback}>Feedback</Link>,
-      'feedback',
-      null
-    ),
-  ]),
-
-  getItem('Authentication', 'authentication', <SecurityScanOutlined />, [
-    getItem(<Link to={PATH_AUTH.signin}>Sign In</Link>, 'auth-signin', null),
-    getItem(<Link to={PATH_AUTH.signup}>Sign Up</Link>, 'auth-signup', null),
-    getItem(<Link to={PATH_AUTH.welcome}>Welcome</Link>, 'auth-welcome', null),
-    getItem(
-      <Link to={PATH_AUTH.verifyEmail}>Verify email</Link>,
-      'auth-verify',
-      null
-    ),
-    getItem(
-      <Link to={PATH_AUTH.passwordReset}>Password reset</Link>,
-      'auth-password-reset',
-      null
-    ),
-    // getItem(<Link to={PATH_AUTH.passwordConfirm}>Passsword confirmation</Link>, 'auth-password-confirmation', null),
-    getItem(
-      <Link to={PATH_AUTH.accountDelete}>Account deleted</Link>,
-      'auth-account-deactivation',
-      null
-    ),
-  ]),
-
-  getItem('Errors', 'errors', <BugOutlined />, [
-    getItem(<Link to={PATH_ERROR.error400}>400</Link>, '400', null),
-    getItem(<Link to={PATH_ERROR.error403}>403</Link>, '403', null),
-    getItem(<Link to={PATH_ERROR.error404}>404</Link>, '404', null),
-    getItem(<Link to={PATH_ERROR.error500}>500</Link>, '500', null),
-    getItem(<Link to={PATH_ERROR.error503}>503</Link>, '503', null),
-  ]),
-
-  getItem('Help', 'help', null, [], 'group'),
-  getItem(
-    <Link to={PATH_DOCS.productRoadmap} target="_blank">
-      Roadmap
-    </Link>,
-    'product-roadmap',
-    <ProductOutlined />
-  ),
-  getItem(
-    <Link to={PATH_DOCS.components} target="_blank">
-      Components
-    </Link>,
-    'components',
-    <AppstoreAddOutlined />
-  ),
-  getItem(
-    <Link to={PATH_DOCS.help} target="_blank">
-      Documentation
-    </Link>,
-    'documentation',
-    <SnippetsOutlined />
-  ),
-  getItem(
-    <Link to={PATH_GITHUB.repo} target="_blank">
-      Give us a star
-    </Link>,
-    'give-us-a-star',
-    <GithubOutlined />
-  ),
 ];
