@@ -20,9 +20,9 @@ export const WelcomePage = () => {
         React, TypeScript, and Vite.
       </Typography.Text>
       <Link to={PATH_DASHBOARD.default}>
-        <Button type="primary" size="middle">
+        {/* <Button type="primary" size="middle">
           Go to Homepage
-        </Button>
+        </Button> */}
       </Link>
     </Flex>
   );

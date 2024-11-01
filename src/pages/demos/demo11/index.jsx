@@ -1,3 +1,4 @@
+import { get, set } from 'lodash';
 import React from 'react';
 import FormRender, { useForm } from 'form-render';
 import defaultSchema from "./schema.json";
@@ -38,10 +39,21 @@ const schema = {
 
 export const Demo = () => {
   const form = useForm();
+
+  const ruleOne = get(defaultSchema, 'properties.input2.rules[0]');
+  const { validator, message } = ruleOne;
+  const validatorBody = validator.slice(1, -1).join('');
+  // build a validator function from string:
+  const validatorFunc = new Function('_', 'value', validatorBody);
+  // make a deep clone
+  const defaultSchemaCopy = JSON.parse(JSON.stringify(defaultSchema));
+  // create a new schema with validator function
+  set(defaultSchemaCopy, 'properties.input2.rules[0]', { message, validator: validatorFunc});
+  // console.log(defaultSchemaCopy);
   
   return (
      <FormRender 
-      schema={schema}
+      schema={defaultSchemaCopy}
       form={form} 
       footer={true}
     />

@@ -77,7 +77,7 @@ export const mockTreeItems = [
       { label: 'Demo 07:', key: '/demos/demo7'},
       { label: 'Demo 08:', key: '/demos/demo8'},
       { label: 'Demo 09:', key: '/demos/demo9'},
-      { label: '自定义控件:', key: '/demos/demo10'},
+      { label: '#10: Tree select', key: '/demos/demo10'},
       { label: '自定义校验:', key: '/demos/demo11'},
       { label: 'Demo 12:', key: '/demos/demo12'},
     ],

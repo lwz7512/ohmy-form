@@ -18,7 +18,13 @@
       "type": "string",
       "rules": [
         {
-          "validator": "function (_, value) { const pattern = '^[\u4E00-\u9FA5]+$'; const result = new RegExp(pattern).test(value); return result; }",
+          "validator": [
+            "function (_, value) {",
+            " const pattern = '^[\u4E00-\u9FA5]+$';",
+            " const result = new RegExp(pattern).test(value);",
+            " return result;",
+            "}"
+          ],
           "message": "请输入中文！"
         }
       ]

@@ -62,6 +62,7 @@ const SideNav = ({ ...others }) => {
           items={mockTreeItems}
           onClick={onClick}
           selectedKeys={[current]}
+          defaultOpenKeys={['demos']}
           style={{ border: 'none' }}
         />
       </ConfigProvider>

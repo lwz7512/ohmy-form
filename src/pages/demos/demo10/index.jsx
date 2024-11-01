@@ -12,11 +12,15 @@ export const Demo = () => {
   };
 
   return (
-    <FormRender
-      form={form} // 确保将 form 实例传递给 FormRender
-      schema={defaultSchema}
-      widgets={widgets}
-      // 其他 props...
-    />
+    <>
+      <h1>Demo 10: tree select</h1>
+      {/* <CyberTreeSelect treeData={treeData} /> */}
+      <FormRender
+        form={form} // 确保将 form 实例传递给 FormRender
+        schema={defaultSchema}
+        widgets={widgets}
+        // 其他 props...
+      />
+    </>
   );
 };
