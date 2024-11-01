@@ -40,7 +40,8 @@ const schema = {
 export const Demo = () => {
   const form = useForm();
 
-  const ruleOne = get(defaultSchema, 'properties.input2.rules[0]');
+  const rulePath = 'properties.input2.rules[0]';
+  const ruleOne = get(defaultSchema, rulePath);
   const { validator, message } = ruleOne;
   const validatorBody = validator.slice(1, -1).join('');
   // build a validator function from string:
@@ -48,7 +49,8 @@ export const Demo = () => {
   // make a deep clone
   const defaultSchemaCopy = JSON.parse(JSON.stringify(defaultSchema));
   // create a new schema with validator function
-  set(defaultSchemaCopy, 'properties.input2.rules[0]', { message, validator: validatorFunc});
+  const newRule = { message, validator: validatorFunc};
+  set(defaultSchemaCopy, rulePath, newRule);
   // console.log(defaultSchemaCopy);
   
   return (
