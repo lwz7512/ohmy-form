@@ -1,8 +1,11 @@
 import { get, set } from 'lodash';
 import React from 'react';
 import FormRender, { useForm } from 'form-render';
-import defaultSchema from "./schema.json";
+import defaultSchema from './schema.json';
 
+/**
+ * @deprecated NOT IN USE
+ */
 const schema = {
   type: 'object',
   displayType: 'row',
@@ -11,15 +14,13 @@ const schema = {
       title: '正则表达式',
       type: 'string',
       required: true,
-      rules: [
-        { pattern: '^[\u4E00-\u9FA5]+$', message: '请输入中文！' }
-      ]
+      rules: [{ pattern: '^[\u4E00-\u9FA5]+$', message: '请输入中文！' }],
     },
     input2: {
       title: '自定义校验',
       type: 'string',
       rules: [
-        { 
+        {
           validator: (_, value) => {
             const pattern = '^[\u4E00-\u9FA5]+$';
             const result = new RegExp(pattern).test(value);
@@ -29,12 +30,12 @@ const schema = {
             //   status: result,
             //   message: '请输入中文！',
             // }
-          }, 
-          message: '请输入中文！' 
-        }
-      ]
-    }
-  }
+          },
+          message: '请输入中文！',
+        },
+      ],
+    },
+  },
 };
 
 export const Demo = () => {
@@ -49,15 +50,9 @@ export const Demo = () => {
   // make a deep clone
   const defaultSchemaCopy = JSON.parse(JSON.stringify(defaultSchema));
   // create a new schema with validator function
-  const newRule = { message, validator: validatorFunc};
+  const newRule = { message, validator: validatorFunc };
   set(defaultSchemaCopy, rulePath, newRule);
   // console.log(defaultSchemaCopy);
-  
-  return (
-     <FormRender 
-      schema={defaultSchemaCopy}
-      form={form} 
-      footer={true}
-    />
-  )
+
+  return <FormRender schema={defaultSchemaCopy} form={form} footer={true} />;
 };

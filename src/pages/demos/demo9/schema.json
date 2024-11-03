@@ -17,10 +17,7 @@
     "number_sum": {
       "title": "Equals",
       "type": "number",
-      "dependencies": [
-        "number_a",
-        "number_b"
-      ]
+      "dependencies": ["number_a", "number_b"]
     },
     "select_time": {
       "title": "时间段",
@@ -38,9 +35,7 @@
       "enumNames": [],
       "widget": "select",
       "default": "请选择小时",
-      "dependencies": [
-        "select_time"
-      ],
+      "dependencies": ["select_time"],
       "dataview": "2"
     },
     "select_min": {
@@ -50,9 +45,7 @@
       "enumNames": [],
       "widget": "select",
       "default": "请选择分钟",
-      "dependencies": [
-        "select_hour"
-      ],
+      "dependencies": ["select_hour"],
       "dataview": "3"
     },
     "date_begin": {
@@ -65,7 +58,20 @@
       "title": "结束日期",
       "type": "string",
       "format": "date",
-      "required": true
+      "required": true,
+      "rules": [
+        {
+          "validator": [
+            "function (_, value, { form }) {",
+            " if (value && value > form.getValueByPath('date_begin')) {",
+            "   return true;",
+            " }",
+            " return false;",
+            "}"
+          ],
+          "message": "开始日期必须小于结束日期！"
+        }
+      ]
     }
   }
 }

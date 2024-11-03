@@ -33,7 +33,9 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-unused-vars': 'warn',
+      'react/prop-types': 'off',
+      'react/no-children-prop': 'off',
     },
   },
 ];

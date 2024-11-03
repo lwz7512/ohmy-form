@@ -24,8 +24,8 @@ import {
   Demo9,
   Demo10,
   Demo11,
+  Demo12,
 } from '@/pages';
-
 
 // Custom scroll restoration function
 export const ScrollToTop = () => {
@@ -48,8 +48,8 @@ export const ScrollToTop = () => {
 
 /**
  * Create an HOC to wrap your route components with ScrollToTop
- * @param {ReactNode} children 
- * @returns 
+ * @param {ReactNode} children
+ * @returns
  */
 const PageWrapper = ({ children }) => {
   return (
@@ -167,6 +167,10 @@ const router = createBrowserRouter([
       {
         path: 'demo11',
         element: <Demo11 />,
+      },
+      {
+        path: 'demo12',
+        element: <Demo12 />,
       },
       // {
       //   path: 'learning',

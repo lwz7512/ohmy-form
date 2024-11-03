@@ -1,4 +1,4 @@
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   AppstoreAddOutlined,
@@ -30,24 +30,16 @@ import {
   DEMO_PATHS,
 } from '@/constants';
 
-
-
 /**
  * Compose an item
- * @param {React.ReactNode} label 
- * @param {React.Key} key 
- * @param {React.ReactNode | undefined} icon 
- * @param {MenuItem[] | undefined} children 
- * @param {string} type 
+ * @param {React.ReactNode} label
+ * @param {React.Key} key
+ * @param {React.ReactNode | undefined} icon
+ * @param {MenuItem[] | undefined} children
+ * @param {string} type
  * @returns {MenuItem}
-*/
-const getItem = (
-  label,
-  key,
-  icon = null,
-  children,
-  type = 'group'
-) => {
+ */
+const getItem = (label, key, icon = null, children, type = 'group') => {
   return {
     key,
     icon,
@@ -57,6 +49,9 @@ const getItem = (
   };
 };
 
+/**
+ * menu data from dashboard demos
+ */
 export const mockTreeItems = [
   {
     label: 'Default Page',
@@ -72,23 +67,24 @@ export const mockTreeItems = [
       { label: 'Form Select Cascade', key: '/demos/demo2' },
       { label: 'Form Watch', key: '/demos/demo3' },
       { label: 'Dyna load script', key: '/demos/demo4' },
-      { label: 'Dyna script from DB', key: '/demos/demo5'},
-      { label: 'Demo 06:', key: '/demos/demo6'},
-      { label: 'Demo 07:', key: '/demos/demo7'},
-      { label: 'Demo 08:', key: '/demos/demo8'},
-      { label: 'Demo 09:', key: '/demos/demo9'},
-      { label: '#10: Tree select', key: '/demos/demo10'},
-      { label: '自定义校验:', key: '/demos/demo11'},
-      { label: 'Demo 12:', key: '/demos/demo12'},
+      { label: 'Dyna script from DB', key: '/demos/demo5' },
+      { label: 'Demo 06:', key: '/demos/demo6' },
+      { label: 'Demo 07:', key: '/demos/demo7' },
+      { label: 'Demo 08:', key: '/demos/demo8' },
+      { label: 'Two dates validation:', key: '/demos/demo9' },
+      { label: '#10: Tree select', key: '/demos/demo10' },
+      { label: '自定义校验:', key: '/demos/demo11' },
+      { label: 'Table Demo', key: '/demos/demo12' },
     ],
   },
 ];
 
 /**
+ * @deprecated NOT IN USE ANYMORE!
  * type MenuItem = Required<MenuProps>['items'][number];
  * @type {MenuItem[]}
  */
-export const items = [
+const items = [
   getItem('Demos', 'demos', <PieChartOutlined />, [
     getItem('Default', 'default', null),
     getItem('Form Sum', 'demo1'),
@@ -114,5 +110,4 @@ export const items = [
     'sitemap',
     <BranchesOutlined />
   ),
-
 ];

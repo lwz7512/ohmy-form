@@ -14,3 +14,4 @@ export { Demo as Demo8 } from './demos/demo8';
 export { Demo as Demo9 } from './demos/demo9';
 export { Demo as Demo10 } from './demos/demo10';
 export { Demo as Demo11 } from './demos/demo11';
+export { Demo as Demo12 } from './demos/demo12';
