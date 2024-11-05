@@ -6,7 +6,7 @@ import { ConfigProvider } from 'antd';
 
 import { adjustableTheme } from './constants';
 import { StylesContext } from './context';
-import routes from './routes';
+import { router } from './routes';
 
 import './App.css';
 
@@ -19,9 +19,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <ConfigProvider
-        theme={adjustableTheme(mytheme)}
-      >
+      <ConfigProvider theme={adjustableTheme(mytheme)}>
         <StylesContext.Provider
           value={{
             rowProps: {
@@ -40,7 +38,7 @@ function App() {
             },
           }}
         >
-          <RouterProvider router={routes} />
+          <RouterProvider router={router} />
         </StylesContext.Provider>
       </ConfigProvider>
     </HelmetProvider>

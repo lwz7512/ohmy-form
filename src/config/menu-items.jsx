@@ -1,34 +1,14 @@
 import { Link } from 'react-router-dom';
 
 import {
-  AppstoreAddOutlined,
   BranchesOutlined,
-  BugOutlined,
-  GithubOutlined,
-  IdcardOutlined,
   InfoCircleOutlined,
   PieChartOutlined,
-  ProductOutlined,
-  SecurityScanOutlined,
-  SnippetsOutlined,
-  UserOutlined,
-  MailOutlined,
   AppstoreOutlined,
   SettingOutlined,
 } from '@ant-design/icons';
 
-import {
-  PATH_ABOUT,
-  PATH_AUTH,
-  PATH_CORPORATE,
-  PATH_DASHBOARD,
-  PATH_DOCS,
-  PATH_ERROR,
-  PATH_GITHUB,
-  PATH_SITEMAP,
-  PATH_USER_PROFILE,
-  DEMO_PATHS,
-} from '@/constants';
+import { PATH_ABOUT, PATH_SITEMAP } from '@/constants';
 
 /**
  * Compose an item
@@ -75,6 +55,8 @@ export const mockTreeItems = [
       { label: '#10: Tree select', key: '/demos/demo10' },
       { label: '自定义校验:', key: '/demos/demo11' },
       { label: 'Table Demo', key: '/demos/demo12' },
+      { label: 'Chart Demo', key: '/demos/demo13' },
+      { label: 'Logic Flow', key: '/demos/demo14' },
     ],
   },
 ];

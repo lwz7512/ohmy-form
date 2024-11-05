@@ -1,5 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
-import { createBrowserRouter, useLocation } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { GuestLayout, DashboardLayout } from '@/layouts';
 import {
@@ -25,22 +24,11 @@ import {
   Demo10,
   Demo11,
   Demo12,
+  Demo13,
+  LogicFlowPage,
 } from '@/pages';
 
-// Custom scroll restoration function
-export const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    }); // Scroll to the top when the location changes
-  }, [pathname]);
-
-  return null; // This component doesn't render anything
-};
+import { ScrollToTop } from './scroll-top';
 
 // type PageProps = {
 //   children: ReactNode;
@@ -61,7 +49,7 @@ const PageWrapper = ({ children }) => {
 };
 
 // Create the router
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <PageWrapper children={<GuestLayout />} />,
@@ -172,6 +160,14 @@ const router = createBrowserRouter([
         path: 'demo12',
         element: <Demo12 />,
       },
+      {
+        path: 'demo13',
+        element: <Demo13 />,
+      },
+      {
+        path: 'demo14',
+        element: <LogicFlowPage />,
+      },
       // {
       //   path: 'learning',
       //   element: <LearningDashboardPage />,
@@ -279,5 +275,3 @@ const router = createBrowserRouter([
   //   ],
   // },
 ]);
-
-export default router;
