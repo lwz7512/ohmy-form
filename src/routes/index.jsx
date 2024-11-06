@@ -26,6 +26,7 @@ import {
   Demo12,
   Demo13,
   LogicFlowPage,
+  FormDesigner,
 } from '@/pages';
 
 import { ScrollToTop } from './scroll-top';
@@ -99,6 +100,18 @@ export const router = createBrowserRouter([
       {
         path: '503',
         element: <Error503Page />,
+      },
+    ],
+  },
+  {
+    path: '/designer',
+    element: <PageWrapper children={<DashboardLayout />} />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        path: '',
+        element: <FormDesigner />,
       },
     ],
   },

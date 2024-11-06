@@ -39,6 +39,11 @@ export const mockTreeItems = [
     icon: <AppstoreOutlined />,
   },
   {
+    label: 'Form Designer',
+    key: '/designer',
+    icon: <BranchesOutlined />,
+  },
+  {
     label: 'Demos - Group',
     key: 'demos',
     icon: <SettingOutlined />,
