@@ -5,6 +5,7 @@ import useDeleteData from './useDeleteData';
 
 /** 
  * 查询树，以树状结构返回
+ * @returns {*} {datas:数组[{每条记录为字典, "children":[每条记录为字典]},{}]}
  */
 export const fatchBiztree = (nodeid) => {
   const { data, error, loading } = useFetchData(`/api/sys/trees/${nodeid}/tree`);
@@ -13,6 +14,7 @@ export const fatchBiztree = (nodeid) => {
 
 /** 
  * 查询树，以数组结构返回
+ * @returns {*} {datas:数组[{每条记录为字典},{}]}
  */
 export const fatchBiztreeAsTable = (nodeid) => {
   const { data, error, loading } = useFetchData(`/api/sys/trees/${nodeid}/table`);
@@ -66,8 +68,8 @@ export const moveBiztreeNode = (srcId, destId, place, relation) => {
   const { data, error, loading } = usePutData(`/api/sys/trees/${nodeid}`, {
     srcId: srcId,
     destId: destId,
-    place: place, // 位置: before, after
-    relation: relation, // 关系：child, brother
+    place: place,
+    relation: relation,
   });
   return { data, error, loading };
 };
