@@ -21,7 +21,7 @@ export const fetchRoleList = (page, size, orders, searchs) => {
   return { data, error, loading };
 };
 
-/** 
+/**
  * 创建角色
  */
 export const createRole = (name) => {
@@ -31,7 +31,7 @@ export const createRole = (name) => {
   return { data, error, loading };
 };
 
-/** 
+/**
  * 修改角色
  */
 export const modifyRole = (id, name) => {
@@ -43,7 +43,7 @@ export const modifyRole = (id, name) => {
 
 /**
  * 查询角色
- * @param {*} id 
+ * @param {*} id
  * @returns {*} {data:{返回结果记录为字典}}
  */
 export const fetchRole = (id) => {
@@ -51,7 +51,7 @@ export const fetchRole = (id) => {
   return { data, error, loading };
 };
 
-/** 
+/**
  * 删除角色
  */
 export const removeRole = (id) => {
@@ -60,7 +60,7 @@ export const removeRole = (id) => {
 };
 
 /**
- * 获取某个角色的用户列表
+ * 获取某个角色的账号列表
  * @param {*} id
  * @returns {*} {datas:数组[{返回结果记录为字典}]}
  */

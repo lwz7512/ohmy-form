@@ -36,7 +36,7 @@ export const createAccount = (loginName, username) => {
 };
 
 /**
- * 获取某个用户的信息
+ * 获取某个账号的信息
  * @param {*} id
  * @returns {*} {data:{返回结果记录为字典}}
  */
@@ -48,7 +48,7 @@ export const fetchAccount = (accountId) => {
 };
 
 /**
- * 获取某个用户的角色列表
+ * 获取某个账号的角色列表
  * @param {*} id
  * @returns {*} {datas:数组[{返回结果记录为字典}]}
  */
@@ -110,7 +110,7 @@ export const revokeRolesFromAccount = (accountId, roleIds) => {
 };
 
 /**
- * 获取某个用户的部门列表
+ * 获取某个账号的部门列表
  * @param {*} id
  * @returns {*} {datas:数组[{返回结果记录为字典}]}
  */
