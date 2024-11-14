@@ -7,8 +7,8 @@ export const fetchDataviewList = (page, size, orders, searchs) => {
   const { data, error, loading } = usePostData(`/api/dataview/list`, {
     page: page,
     size: size,
-    orders: orders,
-    searchs: searchs,
+    orders: orders, // [{'column':'name', 'dir':'asc'},{'column':'title', 'dir':'desc'}]
+    searchs: searchs, // [{'column':'name', 'op':'eq', 'value':'系统字典'}]
   });
   return { data, error, loading };
 };
