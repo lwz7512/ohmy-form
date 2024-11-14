@@ -46,7 +46,7 @@ export const createDisctionary = (category, seq, value) => {
 /** 
  * 修改数据字典
  */
-export const modifyDisctionary = (category, seq, value) => {
+export const modifyDisctionary = (id, category, seq, value) => {
   const { data, error, loading } = usePutData(`/api/sys/dictionaries/${id}`, {
     category: category,
     seq: seq,
