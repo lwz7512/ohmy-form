@@ -75,3 +75,31 @@ export const fetchGroupAccounts = (groupId) => {
   );
   return { data, error, loading };
 };
+
+/**
+ * 授权账号给部门
+ * @param {*} groupId 
+ * @param {*} accountIds 字符串数组[accountId, accountId2]
+ * @returns 
+ */
+export const grantAccountsToGroup = (groupId, accountIds) => {
+  const { data, error, loading } = usePutData(
+    `/api/auth/v5/groups/${groupId}/accounts`,
+    {accountIds: accountIds}
+  );
+  return { data, error, loading };
+};
+
+/**
+ * 撤销部门账号
+ * @param {*} groupId 
+ * @param {*} accountIds 字符串数组[accountId, accountId2]
+ * @returns 
+ */
+export const revokeAccountsFromGroup = (groupId, accountIds) => {
+  const { data, error, loading } = useDeleteData(
+    `/api/auth/v5/groups/${groupId}/accounts`,
+    {accountIds: accountIds}
+  );
+  return { data, error, loading };
+};

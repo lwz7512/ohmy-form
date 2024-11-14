@@ -70,3 +70,31 @@ export const fetchRoleAccounts = (roleId) => {
   );
   return { data, error, loading };
 };
+
+/**
+ * 授权账号给角色
+ * @param {*} roleId 
+ * @param {*} accountIds 字符串数组[accountId, accountId2]
+ * @returns 
+ */
+export const grantAccountsToRole = (roleId, accountIds) => {
+  const { data, error, loading } = usePutData(
+    `/api/auth/v5/roles/${roleId}/accounts`,
+    {accountIds: accountIds}
+  );
+  return { data, error, loading };
+};
+
+/**
+ * 撤销角色账号
+ * @param {*} roleId 
+ * @param {*} accountIds 字符串数组[accountId, accountId2]
+ * @returns 
+ */
+export const revokeAccountsFromRole = (roleId, accountIds) => {
+  const { data, error, loading } = useDeleteData(
+    `/api/auth/v5/roles/${roleId}/accounts`,
+    {accountIds: accountIds}
+  );
+  return { data, error, loading };
+};
