@@ -3,6 +3,9 @@ import usePostData from './usePostData';
 import usePutData from './usePutData';
 import useDeleteData from './useDeleteData';
 
+/** 
+ * 登录
+ */
 export const login = (username, password) => {
   const { data, error, loading } = usePostData(`/api/auth/v5/login`, {
     username: username,
@@ -12,6 +15,9 @@ export const login = (username, password) => {
   return { data, error, loading };
 };
 
+/** 
+ * 登出
+ */
 export const logout = () => {
   const { data, error, loading } = useDeleteData(`/api/auth/v5/logout`);
   return { data, error, loading };

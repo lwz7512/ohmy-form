@@ -3,6 +3,9 @@ import usePostData from './usePostData';
 import usePutData from './usePutData';
 import useDeleteData from './useDeleteData';
 
+/** 
+ * 查询数据字典列表
+ */
 export const fetchDisctionaryList = (page, size, orders, searchs) => {
   const { data, error, loading } = usePostData(`/api/sys/dictionaries/list`, {
     page: page,
@@ -13,11 +16,17 @@ export const fetchDisctionaryList = (page, size, orders, searchs) => {
   return { data, error, loading };
 };
 
+/** 
+ * 查询数据字典
+ */
 export const fetchDisctionary = (id) => {
   const { data, error, loading } = useFetchData(`/api/sys/dictionaries/${id}`);
   return { data, error, loading };
 };
 
+/** 
+ * 创建数据字典
+ */
 export const createDisctionary = (category, seq, value) => {
   const { data, error, loading } = usePostData(`/api/sys/dictionaries`, {
     category: category,
@@ -27,6 +36,9 @@ export const createDisctionary = (category, seq, value) => {
   return { data, error, loading };
 };
 
+/** 
+ * 修改数据字典
+ */
 export const modifyDisctionary = (category, seq, value) => {
   const { data, error, loading } = usePutData(`/api/sys/dictionaries/${id}`, {
     category: category,
@@ -36,6 +48,9 @@ export const modifyDisctionary = (category, seq, value) => {
   return { data, error, loading };
 };
 
+/** 
+ * 删除数据字典
+ */
 export const removeDisctionary = (id) => {
   const { data, error, loading } = useDeleteData(`/api/sys/dictionaries/${id}`);
   return { data, error, loading };
