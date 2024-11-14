@@ -39,3 +39,67 @@ export const changePassword = (oldPwd, newPwd) => {
   });
   return { data, error, loading };
 };
+
+/**
+ * 发送注册账号验证码
+ * @param {*} loginName 
+ * @param {*} type 类型: username,phone,email,wx,dingtalk
+ * @returns 
+ */
+export const sendSignupCaptcha = (loginName, type) => {
+  const { data, error, loading } = usePostData(`/api/auth/v5/signup/verify-code`, {
+    loginName: loginName,
+    type: type,
+  });
+  return { data, error, loading };
+};
+
+/**
+ * 注册账号
+ * @param {*} loginName 
+ * @param {*} type 类型: username,phone,email,wx,dingtalk
+ * @param {*} code 验证码
+ * @param {*} password 请使用md5(pwd)加密后传入此参数
+ * @returns 
+ */
+export const signup = (loginName, type, code, password) => {
+  const { data, error, loading } = usePostData(`/api/auth/v5/signup`, {
+    loginName: loginName,
+    type: type,
+    code: code,
+    md5pwd: password,
+  });
+  return { data, error, loading };
+};
+
+/**
+ * 发送丢失密码验证码
+ * @param {*} loginName 
+ * @param {*} type 类型: phone,email
+ * @returns 
+ */
+export const sendLostpwdCaptcha = (loginName, type) => {
+  const { data, error, loading } = usePostData(`/api/auth/v5/lostpwd/verify-code`, {
+    loginName: loginName,
+    type: type,
+  });
+  return { data, error, loading };
+};
+
+/**
+ * 丢失密码，重置密码
+ * @param {*} loginName 
+ * @param {*} type 类型: phone,email
+ * @param {*} code 验证码
+ * @param {*} password 请使用md5(pwd)加密后传入此参数
+ * @returns 
+ */
+export const lostpwd = (loginName, type, code, password) => {
+  const { data, error, loading } = usePostData(`/api/auth/v5/lostpwd`, {
+    loginName: loginName,
+    type: type,
+    code: code,
+    md5pwd: password,
+  });
+  return { data, error, loading };
+};
