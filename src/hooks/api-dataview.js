@@ -4,7 +4,7 @@ import usePutData from './usePutData';
 import useDeleteData from './useDeleteData';
 
 /**
- * 查询数据字典列表
+ * 查询数据视图列表
  * @param {*} page 当前页
  * @param {*} size 每页记录数
  * @param {*} orders 排序，数组[{'column':'name', 'dir':'asc'},{'column':'title', 'dir':'desc'}]
@@ -21,11 +21,19 @@ export const fetchDataviewList = (page, size, orders, searchs) => {
   return { data, error, loading };
 };
 
+/**
+ * 查询数据视图
+ * @param {*} id 
+ * @returns {*} {data:{返回结果记录为字典}}
+ */
 export const fetchDataview = (id) => {
   const { data, error, loading } = useFetchData(`/api/dataview/${id}`);
   return { data, error, loading };
 };
 
+/** 
+ * 创建数据视图
+ */
 export const createDataview = (title, displayType) => {
   const { data, error, loading } = usePostData(`/api/dataview`, {
     title: title,
@@ -34,6 +42,9 @@ export const createDataview = (title, displayType) => {
   return { data, error, loading };
 };
 
+/** 
+ * 修改数据视图
+ */
 export const modifyDataview = (id, title, displayType) => {
   const { data, error, loading } = usePutData(`/api/dataview/${id}`, {
     title: title,
@@ -42,6 +53,9 @@ export const modifyDataview = (id, title, displayType) => {
   return { data, error, loading };
 };
 
+/** 
+ * 删除数据视图
+ */
 export const removeDataview = (id) => {
   const { data, error, loading } = useDeleteData(`/api/dataview/${id}`);
   return { data, error, loading };

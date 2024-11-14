@@ -21,8 +21,10 @@ export const fetchDisctionaryList = (page, size, orders, searchs) => {
   return { data, error, loading };
 };
 
-/** 
+/**
  * 查询数据字典
+ * @param {*} id 
+ * @returns {*} {data:{返回结果记录为字典}}
  */
 export const fetchDisctionary = (id) => {
   const { data, error, loading } = useFetchData(`/api/sys/dictionaries/${id}`);
