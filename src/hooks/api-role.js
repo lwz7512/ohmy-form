@@ -98,3 +98,31 @@ export const revokeAccountsFromRole = (roleId, accountIds) => {
   );
   return { data, error, loading };
 };
+
+/**
+ * 授权菜单给角色
+ * @param {*} roleId 
+ * @param {*} menuIds 字符串数组[menuId, menuId2]
+ * @returns 
+ */
+export const grantMenusToRole = (roleId, menuIds) => {
+  const { data, error, loading } = usePutData(
+    `/api/auth/v5/roles/${roleId}/menus`,
+    {menuIds: menuIds}
+  );
+  return { data, error, loading };
+};
+
+/**
+ * 撤销角色菜单
+ * @param {*} roleId 
+ * @param {*} menuIds 字符串数组[menuId, menuId2]
+ * @returns 
+ */
+export const revokeMenusFromRole = (roleId, menuIds) => {
+  const { data, error, loading } = useDeleteData(
+    `/api/auth/v5/roles/${roleId}/menus`,
+    {menuIds: menuIds}
+  );
+  return { data, error, loading };
+};
