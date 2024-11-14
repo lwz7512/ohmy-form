@@ -103,3 +103,21 @@ export const revokeAccountsFromGroup = (groupId, accountIds) => {
   );
   return { data, error, loading };
 };
+
+/**
+ * 移动树节点位置
+ * @param {*} srcId 源节点ID
+ * @param {*} objId 目标节点ID
+ * @param {*} place 位置: before, after
+ * @param {*} relation 关系：child, brother
+ * @returns 
+ */
+export const moveGroup = (groupId, objId, place, relation) => {
+  const { data, error, loading } = usePutData(`/api/auth/v5/groups/${groupId}/move`, {
+    srcId: srcId,
+    objId: objId,
+    place: place,
+    relation: relation,
+  });
+  return { data, error, loading };
+};
