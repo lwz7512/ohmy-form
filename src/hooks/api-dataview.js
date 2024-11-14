@@ -4,7 +4,12 @@ import usePutData from './usePutData';
 import useDeleteData from './useDeleteData';
 
 export const fetchDataviewList = (page, size, orders, searchs) => {
-  const params = new URLSearchParams({ page, size, orders, searchs });
+  const params = new URLSearchParams({
+    page: page,
+    size: size,
+    orders: orders,
+    searchs: searchs,
+  });
   const { data, error, loading } = useFetchData(`/api/dataview/list?${params}`);
   return { data, error, loading };
 };
@@ -15,17 +20,17 @@ export const fetchDataview = (id) => {
 };
 
 export const createDataview = (title, displayType) => {
-  const { data, error, loading } = usePostData('/api/dataview', {
-    title,
-    displayType
+  const { data, error, loading } = usePostData(`/api/dataview`, {
+    title: title,
+    displayType: displayType,
   });
   return { data, error, loading };
 };
 
 export const modifyDataview = (id, title, displayType) => {
   const { data, error, loading } = usePutData(`/api/dataview/${id}`, {
-    title,
-    displayType
+    title: title,
+    displayType: displayType,
   });
   return { data, error, loading };
 };
