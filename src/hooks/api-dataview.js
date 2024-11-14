@@ -4,13 +4,12 @@ import usePutData from './usePutData';
 import useDeleteData from './useDeleteData';
 
 export const fetchDataviewList = (page, size, orders, searchs) => {
-  const params = new URLSearchParams({
+  const { data, error, loading } = usePostData(`/api/dataview/list`, {
     page: page,
     size: size,
     orders: orders,
     searchs: searchs,
   });
-  const { data, error, loading } = useFetchData(`/api/dataview/list?${params}`);
   return { data, error, loading };
 };
 
