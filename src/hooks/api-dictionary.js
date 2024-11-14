@@ -11,7 +11,7 @@ import useDeleteData from './useDeleteData';
  * @param {*} searchs 过滤条件，数组[{'column':'name', 'op':'eq', 'value':'系统字典'}]
  * @returns {*} {currPage:当前页, pageSize:每页记录数, totalNum:总记录数, totalPage:总页数, datas:数组[{每条记录为字典},{}]}
  */
-export const fetchDisctionaryList = (page, size, orders, searchs) => {
+export const fetchDictionaryList = (page, size, orders, searchs) => {
   const { data, error, loading } = usePostData(`/api/sys/dictionaries/list`, {
     page: page,
     size: size,
@@ -26,7 +26,7 @@ export const fetchDisctionaryList = (page, size, orders, searchs) => {
  * @param {*} id 
  * @returns {*} {data:{返回结果记录为字典}}
  */
-export const fetchDisctionary = (id) => {
+export const fetchDictionary = (id) => {
   const { data, error, loading } = useFetchData(`/api/sys/dictionaries/${id}`);
   return { data, error, loading };
 };
@@ -34,7 +34,7 @@ export const fetchDisctionary = (id) => {
 /** 
  * 创建数据字典
  */
-export const createDisctionary = (category, seq, value) => {
+export const createDictionary = (category, seq, value) => {
   const { data, error, loading } = usePostData(`/api/sys/dictionaries`, {
     category: category,
     seq: seq,
@@ -46,7 +46,7 @@ export const createDisctionary = (category, seq, value) => {
 /** 
  * 修改数据字典
  */
-export const modifyDisctionary = (id, category, seq, value) => {
+export const modifyDictionary = (id, category, seq, value) => {
   const { data, error, loading } = usePutData(`/api/sys/dictionaries/${id}`, {
     category: category,
     seq: seq,
@@ -58,7 +58,7 @@ export const modifyDisctionary = (id, category, seq, value) => {
 /** 
  * 删除数据字典
  */
-export const removeDisctionary = (id) => {
+export const removeDictionary = (id) => {
   const { data, error, loading } = useDeleteData(`/api/sys/dictionaries/${id}`);
   return { data, error, loading };
 };
