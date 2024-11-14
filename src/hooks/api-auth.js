@@ -43,7 +43,7 @@ export const changePassword = (oldPwd, newPwd) => {
 /**
  * 发送注册账号验证码
  * @param {*} loginName 
- * @param {*} type 类型: username,phone,email,wx,dingtalk
+ * @param {*} type 类型: phone,email
  * @returns 
  */
 export const sendSignupCaptcha = (loginName, type) => {
