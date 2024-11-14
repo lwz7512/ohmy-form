@@ -16,7 +16,7 @@ export const fatchBiztree = (nodeid) => {
  * 查询树，以数组结构返回
  * @returns {*} {datas:数组[{每条记录为字典},{}]}
  */
-export const fatchBiztreeAsTable = (nodeid) => {
+export const fatchBiztreeList = (nodeid) => {
   const { data, error, loading } = useFetchData(`/api/sys/trees/${nodeid}/table`);
   return { data, error, loading };
 };
