@@ -5,13 +5,13 @@ import useDeleteData from './useDeleteData';
 
 /**
  * 登录
- * @param {*} username 
+ * @param {*} loginName 
  * @param {*} password 请使用md5(pwd)加密后传入此参数
  * @returns 
  */
-export const login = (username, password) => {
+export const login = (loginName, password) => {
   const { data, error, loading } = usePostData(`/api/auth/v5/login`, {
-    username: username,
+    username: loginName,
     password: password,
   });
   localStorage.setItem('formas.jwt', data);
